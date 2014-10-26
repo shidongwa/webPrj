@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+    <script src="../js/jquery-1.8.0.min.js" >
+    </script>
+    
+ <style type="text/css">
+ table{width:300px;}
+
+    caption{background:#DCA;}
+
+    th{background:#FCA;width:50%;}
+
+    td{text-align:center;}
+ </style>
+    
+<script>
+   $(document).ready(function(){
+
+    odd= {"background":"#EDA","color":"#3F5"};//奇数样式
+
+    even={"background":"#2DA","color":"#875"};//偶数样式
+
+    odd_even("#table_test",odd,even);
+
+    });
+
+    function odd_even(id,odd,even){
+
+    $(id).find("tr").each(function(index,element){
+
+    if(index%2==1)
+
+    $(this).css(odd);
+
+    else
+
+    $(this).css(even);
+
+    });
+   }
+ </script>  
+ 
+   
+</head>
+<body>
+
+    <table id="table_test">
+        <tr>
+            <td>As you like it</td>
+            <td>Comdy</td>
+        </tr>
+        <tr>
+            <td>All's well that ends well</td>
+            <td>Comdy</td>
+        </tr>
+        <tr>
+            <td>Hamlet</td>
+            <td>Tragedy</td>
+        </tr>
+        <tr>
+            <td>Macbeth</td>
+            <td>Tragedy</td>
+        </tr>
+        <tr>
+            <td>Romeo and juliet</td>
+            <td>Tragedy</td>
+        </tr>
+        <tr>
+            <td>Henry IV</td>
+            <td>History</td>
+        </tr>
+        <tr>
+            <td>Henry V</td>
+            <td>History</td>
+        </tr>
+
+    </table>
+    
+</body>
+</html>
