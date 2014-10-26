@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+    tr
+{
+    background:#FF3;
+    }               
+tr:nth-child(2n)
+{
+         background:#6F9; 
+}
+ tr
+{
+         background-color: expression((this.sectionRowIndex % 2 == 0) ? "#FF3" : "#6F9" );
+}        
+
+</style>
+
+</head>
+
+<body>
+<table>
+<tr><td>这是奇数行</td></tr>
+<tr><td>这是偶数行</td></tr>
+<tr><td>这是奇数行</td></tr>
+<tr><td>这是偶数行</td></tr>
+<tr><td>这是奇数行</td></tr>
+<tr><td>这是偶数行</td></tr>
+<tr><td>这是奇数行</td></tr>
+<tr><td>这是偶数行</td></tr>
+<tr><td>这是奇数行</td></tr>
+<tr><td>这是偶数行</td></tr>
+<tr><td>这是奇数行</td></tr>
+<tr><td>这是偶数行</td></tr>
+<tr><td>这是奇数行</td></tr>
+<tr><td>这是偶数行</td></tr>
+<tr><td>这是奇数行</td></tr>
+<tr><td>这是偶数行</td></tr>
+</table>
+</body>
+
+</html>
