@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+    $("#btn1").click(function(){
+    	//alert(1);  
+    	window.open("window-open-child.html",'_blank', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=no');
+    	  });
+});
+	
+function callback(retVal){
+	alert("callback:" + retVal);
+}
+</script>
+    
+</head>
+<body>
+<form>
+<button id="btn1" type="button">Open Child Win</button>
+</form>
+</body>
+</html>

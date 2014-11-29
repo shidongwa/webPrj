@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript">
+var count = 1;
+$(document).ready(function(){
+        $("#btn1").click(function(){
+        	  ++count;
+        	  alert("count=" + count)
+        	  window.location.reload(true);
+        	  });
+        
+        $("#btn2").clickXXX(function(){
+        	//window.opener.callback(count);
+      		 if(parent.window.opener != null && ! parent.window.opener){
+      				parent.window.opener.callback(count);
+    		 }else{
+    			 alert("parent opener is null");
+    		 }
+      		 
+      		 if(window.opener != null && ! window.opener){
+   				window.opener.callback(count);
+	 		 }else{
+	 			 alert("opener is null");
+	 		 }
+        	window.close();
+        });
+        
+        // IE下可以工作，chrome不可以
+        $(window).unload(function(){
+        	//alert("unload count=" + count);
+        });
+        
+        // IE下可以工作，chrome不可以
+        $(window).on('unload', function(){
+        	//alert("unload count=" + count);
+ 			window.opener.callback(count);
+        });
+     
+        // IE， chrome都不可以
+        $(window).beforeunload(function(){
+        	//alert('asdf');
+        	return "jquery onbeforeunload is work";
+        });
+
+});
+
+	// chrome / IE 下都可以工作
+	window.onbeforeunloadXXX = function(){
+		//window.opener.callback(count);
+		return "onbeforeunload is work";
+		}
+	
+</script>
+</head>
+<body>
+<button id="btn1" type="button">refresh</button>
+<button id="btn2" type="button" onclick="closeWin()">close</button>
+
+<script type="text/javascript">
+function closeWin(){
+		 if(parent.window.opener != null && ! parent.window.opener){
+				parent.window.opener.callback(count);
+		 }else{
+			 alert("parent opener is null");
+		 }
+		 
+		 if(window.opener != null && ! window.opener){
+			window.opener.callback(count);
+		 }else{
+			 alert("opener is null");
+		 }
+ 	window.close();
+}
+</script>
+</body>
+
+</html>
